@@ -32,8 +32,13 @@ class IndexPage extends React.Component {
             </P>
             <ul>
               <li>
-                This site has statically generated marketing pages like this one
-                and <Link className="link" to="/page-2/">page 2.</Link>{" "}
+                <P>
+                  This site has statically generated marketing pages like this
+                  one and{" "}
+                  <Link className="link" to="/page-2/">
+                    page 2.
+                  </Link>{" "}
+                </P>
               </li>
               <li>
                 It also has a dynamically generated clientside app guarded by
@@ -48,7 +53,10 @@ class IndexPage extends React.Component {
               </li>
               <li>
                 You can{" "}
-                <a className="link" href="https://github.com/sw-yx/jamstack-hackathon-starter">
+                <a
+                  className="link"
+                  href="https://github.com/sw-yx/jamstack-hackathon-starter"
+                >
                   view source here
                 </a>
               </li>
@@ -72,13 +80,18 @@ class IndexPage extends React.Component {
             <p>
               You can still access Netlify functions even on static "marketing
               pages". This function is available at{" "}
-              <a  href="/.netlify/functions/token-hider">
-              <pre className="bg-yellow-300 bg-opacity-20 px-2 py-1 inline-flex items-center rounded font-bold">/.netlify/functions/token-hider</pre>
+              <a href="/.netlify/functions/token-hider">
+                <pre className="bg-yellow-300 bg-opacity-20 px-2 py-1 inline-flex items-center rounded font-bold">
+                  /.netlify/functions/token-hider
+                </pre>
               </a>{" "}
               and it uses an API_SECRET environment variable that is hidden from
               the frontend!
             </p>
-            <button className="hover:bg-gray-800 hover:bg-opacity-40 text-gray-300 hover:text-gray-100 border rounded border-gray-300 hover:border-gray-100 px-3 py-2" onClick={this.handleClick}>
+            <button
+              className="hover:bg-gray-800 hover:bg-opacity-40 text-gray-300 hover:text-gray-100 border rounded border-gray-300 hover:border-gray-100 px-3 py-2"
+              onClick={this.handleClick}
+            >
               {loading ? "Loading..." : "Call Lambda Function"}
             </button>
             <br />
@@ -86,10 +99,12 @@ class IndexPage extends React.Component {
             {msg ? (
               <img src={msg[Math.floor(Math.random() * 10)]} alt="dog"></img>
             ) : (
-              <pre className="language-html"><code>"Click the button and watch this!"</code></pre>
+              <pre className="language-html">
+                <code>"Click the button and watch this!"</code>
+              </pre>
             )}
           </div>
-          
+
           <div className="lg:pl-12 md:pt-4">
             <p>Now go build something great.</p>
             <div style={{ maxWidth: "300px", marginBottom: "1.45rem" }}>

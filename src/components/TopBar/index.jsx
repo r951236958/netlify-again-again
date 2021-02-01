@@ -221,9 +221,9 @@ export default function TopBar({ menuLinks }) {
                         </Link>
                         <Link
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                          to="/about/"
+                          to="/app/"
                         >
-                          About
+                          App
                         </Link>
                         {isLoggedIn && (
                           <Link
