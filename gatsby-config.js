@@ -22,6 +22,28 @@ module.exports = {
     title: "JAMstack Hackathon Starter",
     description: `Kick off your next, great Gatsby app.`,
     author: `@swyx`,
+    menuLinks: [
+      {
+        name: "Home",
+        link: "/",
+      },
+      {
+        name: "About",
+        link: "/about/",
+      },
+      {
+        name: "Page2",
+        link: "/page-2/",
+      },
+      {
+        name: "Links",
+        link: "/links/",
+      },
+      {
+        name: "Profile",
+        link: "/account/profile/",
+      },
+    ],
   },
 
   plugins: [
@@ -61,5 +83,29 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        // useResolveUrlLoader: true,
+        sassOptions: {
+          javascriptEnabled: true,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-theme-material-ui`,
+      options: {
+        webFontsConfig: {
+          fonts: {
+            google: [
+              {
+                family: `Roboto`,
+                variants: [`300`, `400`, `500`],
+              },
+            ],
+          },
+        },
+      },
+    },
   ],
 }
