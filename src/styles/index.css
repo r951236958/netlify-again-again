@@ -29,11 +29,11 @@ p {
 }
 
 .btn {
-  @apply bg-blue-500 shadow-md text-base text-white font-bold px-3 py-2 hover:bg-blue-400 rounded-md;
+  @apply bg-blue-500 shadow-md text-base text-white font-bold px-3 py-2 hover:bg-blue-400 rounded-md mx-2 mb-2;
 }
 
 .footer-link {
-  @apply text-gray-100 hover:text-gray-300 rounded hover:bg-gray-400 hover:bg-opacity-20 hover:underline font-normal px-3 py-2;
+  @apply text-gray-100 hover:text-gray-300 rounded hover:bg-gray-400 hover:bg-opacity-20 hover:underline font-normal px-3 py-2 mx-2 mb-2;
 }
 
 .link {

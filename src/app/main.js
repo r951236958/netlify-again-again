@@ -1,6 +1,8 @@
 import React from "react"
 
 import { useIdentityContext } from "react-netlify-identity-widget"
+import Title from "../components/Title"
+import P from "../components/P"
 
 function Main() {
   const [data, setData] = React.useState(null)
@@ -35,18 +37,28 @@ function Main() {
 
   return (
     <>
-      <h1>Your Main App</h1>
+      <Title>Your Main App</Title>
       <ul>
-        <li>API: {user.api && user.api.apiURL}</li>
-        <li>ID: {user.id}</li>
+        <li>
+          <P>API: {user.api && user.api.apiURL}</P>
+        </li>
+        <li>
+          <P>ID: {user.id}</P>
+        </li>
       </ul>
       <hr />
 
-      <button onClick={handleClick}>
+      <button className="btn" onClick={handleClick}>
         {loading ? "Loading..." : "Call Lambda Function"}
       </button>
-      {err && <pre>{JSON.stringify(err, null, 2)}</pre>}
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      {err && (
+        <pre className="language-json">
+          <code>{JSON.stringify(err, null, 2)}</code>
+        </pre>
+      )}
+      <pre className="language-json">
+        <code>{JSON.stringify(data, null, 2)}</code>
+      </pre>
     </>
   )
 }

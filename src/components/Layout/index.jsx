@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
           menuLinks={data.site.siteMetadata.menuLinks}
           siteTitle={data.site.siteMetadata.title}
         />
-        <div className="max-w-6xl mt-0 mb-auto mx-auto pt-0 pb-5 px-4">
+        <div className="max-w-5xl mt-0 mb-auto mx-auto pt-0 pb-5 px-4">
           <main>
             <Container>{children}</Container>
           </main>

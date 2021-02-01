@@ -32,6 +32,10 @@ module.exports = {
         link: "/about/",
       },
       {
+        name: "App",
+        link: "/app/",
+      },
+      {
         name: "Page2",
         link: "/page-2/",
       },
@@ -40,8 +44,8 @@ module.exports = {
         link: "/links/",
       },
       {
-        name: "Profile",
-        link: "/account/profile/",
+        name: "HotKey",
+        link: "/hotkey/",
       },
     ],
   },

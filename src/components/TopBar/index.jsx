@@ -120,24 +120,6 @@ export default function TopBar({ menuLinks }) {
                       {link.name}
                     </Link>
                   ))}
-                  <a
-                    href="/"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Team
-                  </a>
-                  <a
-                    href="/"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Projects
-                  </a>
-                  <a
-                    href="/"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Calendar
-                  </a>
                 </div>
               </div>
             </div>
@@ -241,7 +223,7 @@ export default function TopBar({ menuLinks }) {
                         </Link>
                         {isLoggedIn && (
                           <Link
-                            to="/account/profile/"
+                            to="/app/profile/"
                             className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >
@@ -286,9 +268,9 @@ export default function TopBar({ menuLinks }) {
 
             <Link
               className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-              to="/about"
+              to="/app/"
             >
-              About
+              App
             </Link>
 
             <Link
@@ -353,14 +335,14 @@ export default function TopBar({ menuLinks }) {
             {isLoggedIn && (
               <div className="mt-3 px-2 space-y-1">
                 <Link
-                  to="/account/"
+                  to="/app/"
                   className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                 >
-                  Account
+                  App
                 </Link>
 
                 <Link
-                  to="/account/profile/"
+                  to="/app/profile/"
                   className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                 >
                   Profile
