@@ -1,17 +1,5 @@
 import { Link } from "gatsby-theme-material-ui"
 import React from "react"
-// import LinkButton from "../LinkButton"
-import styled from "styled-components"
-
-const StyledLink = styled(Link)({
-  color: "#E0E0E0",
-
-  "&:hover": {
-    color: "#BDBDBD",
-    textDecoration: "underline",
-    backgroundColor: "rgba(55, 65, 81, 0.7)",
-  },
-})
 
 export default function Footer() {
   return (
@@ -33,19 +21,23 @@ export default function Footer() {
               <nav className="mt-4">
                 <ul className="space-y-2">
                   <li>
-                    <StyledLink href="#" className="font-normal">
+                    <Link
+                        href="#"
+                         className="text-gray-100 hover:text-gray-300 rounded hover:bg-gray-400 hover:bg-opacity-20 hover:underline font-normal px-3 py-2"
+                    
+                    >
                       Landingpages
-                    </StyledLink>
+                    </Link>
                   </li>
                   <li>
-                    <StyledLink href="#" className="font-normal">
+                    <Link href="#" className="footer-link">
                       Features
-                    </StyledLink>
+                    </Link>
                   </li>
                   <li>
-                    <StyledLink href="#" className="font-normal">
+                    <Link href="#" className="footer-link">
                       Download brochure
-                    </StyledLink>
+                    </Link>
                   </li>
                 </ul>
               </nav>
@@ -55,24 +47,24 @@ export default function Footer() {
               <nav className="mt-4">
                 <ul className="grid lg:grid-cols-2">
                   <li className="mb-2">
-                    <StyledLink href="#" className="font-normal">
+                    <Link href="#" className="footer-link">
                       Employment
-                    </StyledLink>
+                    </Link>
                   </li>
                   <li className="mb-2">
-                    <StyledLink href="#" className="font-normal">
+                    <Link href="#" className="footer-link">
                       Company
-                    </StyledLink>
+                    </Link>
                   </li>
                   <li className="mb-2">
-                    <StyledLink href="#" className="font-normal">
+                    <Link href="#" className="footer-link">
                       Childcare
-                    </StyledLink>
+                    </Link>
                   </li>
                   <li className="mb-2">
-                    <StyledLink href="#" className="font-normal">
+                    <Link href="#" className="footer-link">
                       Download brochure
-                    </StyledLink>
+                    </Link>
                   </li>
                 </ul>
               </nav>
@@ -82,7 +74,7 @@ export default function Footer() {
               <nav className="mt-4">
                 <ul className="grid lg:grid-cols-2">
                   <li className="mb-2">
-                    <StyledLink href="#" className="flex space-x-2 font-normal">
+                    <Link href="#" className="flex space-x-2 footer-link">
                       <svg
                         className="h-6 w-6"
                         aria-hidden="true"
@@ -92,12 +84,12 @@ export default function Footer() {
                         <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
                       </svg>
                       <span>Twitter</span>
-                    </StyledLink>
+                    </Link>
                   </li>
                   <li className="mb-2">
-                    <StyledLink
+                    <Link
                       href="#"
-                      className="flex space-x-2  font-normal"
+                      className="flex space-x-2 footer-link"
                     >
                       <svg
                         className="h-6 w-6"
@@ -112,12 +104,12 @@ export default function Footer() {
                         />
                       </svg>
                       <span>Instagram</span>
-                    </StyledLink>
+                    </Link>
                   </li>
                   <li className="mb-2">
-                    <StyledLink
+                    <Link
                       href="#"
-                      className="flex space-x-2  font-normal"
+                      className="flex space-x-2 footer-link"
                     >
                       <svg
                         className="h-6 w-6"
@@ -132,7 +124,7 @@ export default function Footer() {
                         />
                       </svg>
                       <span>Facebook</span>
-                    </StyledLink>
+                    </Link>
                   </li>
                 </ul>
               </nav>
@@ -141,14 +133,14 @@ export default function Footer() {
         </div>
         <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 mt-8 lg:mt-12 border-t-2 border-gray-700 pt-8">
           <nav className="flex flex-wrap justify-center space-x-6">
-            <StyledLink href="#" className="font-normal text-sm mb-2">
+            <Link href="#" className="footer-link text-sm mb-2">
               Cookie settings
-            </StyledLink>
+            </Link>
           </nav>
           <p className="text-sm text-center md:text-right">
             © {new Date().getFullYear()}, Built with
             {` `}
-            <StyledLink href="https://www.gatsbyjs.com">Gatsby</StyledLink>
+            <Link className="footer-link" href="https://www.gatsbyjs.com">Gatsby</Link>
           </p>
         </div>
       </footer>

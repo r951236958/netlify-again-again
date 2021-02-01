@@ -1,7 +1,9 @@
 import { Link } from "gatsby"
 import React from "react"
+import Hr from "../components/Hr"
 import Image from "../components/image"
 import Layout from "../components/Layout"
+import P from "../components/P"
 import SEO from "../components/SEO"
 
 
@@ -18,31 +20,27 @@ class IndexPage extends React.Component {
 
   render() {
     const { loading, msg } = this.state
+    const siteTitle = "Home"
     return (
       <Layout>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
-          <div>
-            <p>
+        <SEO title={siteTitle} keywords={[`gatsby`, `application`, `react`]} />
+        <div className="flex flex-col lg:flex-row justify-between divide-x-0 lg:divide-dashed lg:divide-x-2 divide-red-700">
+          <div className="mr-0 lg:mr-4">
+            <P>
               Welcome to your new Gatsby + Netlify Functions + Netlify Identity
               site
-            </p>
+            </P>
             <ul>
               <li>
                 This site has statically generated marketing pages like this one
-                and <Link to="/page-2/">page 2.</Link>{" "}
+                and <Link className="link" to="/page-2/">page 2.</Link>{" "}
               </li>
               <li>
                 It also has a dynamically generated clientside app guarded by
                 authentication:
                 <ul>
                   <li>
-                    <Link to="/app/">
+                    <Link className="link" to="/app/">
                       <b>Go to App (with Netlify Identity)</b>
                     </Link>{" "}
                   </li>
@@ -50,13 +48,13 @@ class IndexPage extends React.Component {
               </li>
               <li>
                 You can{" "}
-                <a href="https://github.com/sw-yx/jamstack-hackathon-starter">
+                <a className="link" href="https://github.com/sw-yx/jamstack-hackathon-starter">
                   view source here
                 </a>
               </li>
               <li>
                 or see{" "}
-                <a href="https://youtu.be/bueXJInQt2c">
+                <a className="link" href="https://youtu.be/bueXJInQt2c">
                   the Youtube walkthrough
                 </a>
               </li>
@@ -70,17 +68,17 @@ class IndexPage extends React.Component {
                 </a>
               </li>
             </ul>
-            <hr />
+            <Hr />
             <p>
               You can still access Netlify functions even on static "marketing
               pages". This function is available at{" "}
-              <a href="/.netlify/functions/token-hider">
-                <code>/.netlify/functions/token-hider</code>
+              <a  href="/.netlify/functions/token-hider">
+              <pre className="bg-yellow-300 bg-opacity-20 px-2 py-1 inline-flex items-center rounded font-bold">/.netlify/functions/token-hider</pre>
               </a>{" "}
               and it uses an API_SECRET environment variable that is hidden from
               the frontend!
             </p>
-            <button onClick={this.handleClick}>
+            <button className="hover:bg-gray-800 hover:bg-opacity-40 text-gray-300 hover:text-gray-100 border rounded border-gray-300 hover:border-gray-100 px-3 py-2" onClick={this.handleClick}>
               {loading ? "Loading..." : "Call Lambda Function"}
             </button>
             <br />
@@ -88,16 +86,11 @@ class IndexPage extends React.Component {
             {msg ? (
               <img src={msg[Math.floor(Math.random() * 10)]} alt="dog"></img>
             ) : (
-              <pre>"Click the button and watch this!"</pre>
+              <pre className="language-html"><code>"Click the button and watch this!"</code></pre>
             )}
           </div>
-          <div
-            style={{
-              borderLeft: "brown",
-              borderLeftStyle: "dashed",
-              paddingLeft: "3rem",
-            }}
-          >
+          
+          <div className="lg:pl-12 md:pt-4">
             <p>Now go build something great.</p>
             <div style={{ maxWidth: "300px", marginBottom: "1.45rem" }}>
               <Image />

@@ -1,7 +1,8 @@
 import { graphql, useStaticQuery } from "gatsby"
 import Prism from "prismjs"
 import React, { useEffect } from "react"
-// import Header from "../Header"
+import Container from "../Container"
+import Footer from "../Footer"
 import TopBar from "../TopBar"
 
 const Layout = ({ children }) => {
@@ -31,12 +32,10 @@ const Layout = ({ children }) => {
           siteTitle={data.site.siteMetadata.title}
         />
         <div className="max-w-6xl mt-0 mb-auto mx-auto pt-0 pb-5 px-4">
-          <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
+          <main>
+            <Container>{children}</Container>
+          </main>
+          <Footer />
         </div>
       </div>
     </>
