@@ -18,7 +18,7 @@ const SecondPage = () => {
   return (
     <Layout>
       <SEO title={siteTitle} />
-      <Title>Hi from the second page</Title>
+      <Title>{siteTitle}</Title>
       <P>Welcome to page 2</P>
       <Link className="btn" to="/">
         Go back to the homepage

@@ -11,7 +11,7 @@ const Links = () => {
   return (
     <Layout>
       <SEO title={siteTitle} />
-      <Title>Useful Links</Title>
+      <Title>{siteTitle}</Title>
       <P>hi</P>
       <LinkList />
     </Layout>

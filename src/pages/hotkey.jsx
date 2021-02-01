@@ -1,7 +1,7 @@
 import React from "react"
 //import { Link } from "gatsby"
 
-import Container from "../components/Container"
+// import Container from "../components/Container"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 
@@ -53,7 +53,8 @@ export default function HotKey() {
   return (
     <Layout>
       <SEO title={siteTitle} />
-      <Container>
+
+      <div className="w-2/3 mx-auto">
         <div className="flex flex-col">
           <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -92,7 +93,7 @@ export default function HotKey() {
             </div>
           </div>
         </div>
-      </Container>
+      </div>
     </Layout>
   )
 }

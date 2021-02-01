@@ -40,6 +40,10 @@ module.exports = {
         link: "/page-2/",
       },
       {
+        name: "Buttons",
+        link: "/buttons/",
+      },
+      {
         name: "Links",
         link: "/links/",
       },
