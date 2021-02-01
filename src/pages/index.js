@@ -1,3 +1,4 @@
+import { GrGatsbyjs } from "@react-icons/all-files/gr/GrGatsbyjs"
 import { Link } from "gatsby"
 import React from "react"
 import Hr from "../components/Hr"
@@ -5,7 +6,6 @@ import Image from "../components/image"
 import Layout from "../components/Layout"
 import P from "../components/P"
 import SEO from "../components/SEO"
-
 
 class IndexPage extends React.Component {
   state = { loading: false, msg: null }
@@ -76,8 +76,9 @@ class IndexPage extends React.Component {
                 </a>
               </li>
             </ul>
+            <GrGatsbyjs />
             <Hr />
-            <p>
+            <div>
               You can still access Netlify functions even on static "marketing
               pages". This function is available at{" "}
               <a href="/.netlify/functions/token-hider">
@@ -87,7 +88,7 @@ class IndexPage extends React.Component {
               </a>{" "}
               and it uses an API_SECRET environment variable that is hidden from
               the frontend!
-            </p>
+            </div>
             <button
               className="hover:bg-gray-800 hover:bg-opacity-40 text-gray-300 hover:text-gray-100 border rounded border-gray-300 hover:border-gray-100 px-3 py-2"
               onClick={this.handleClick}
@@ -97,7 +98,9 @@ class IndexPage extends React.Component {
             <br />
 
             {msg ? (
-              <img src={msg[Math.floor(Math.random() * 10)]} alt="dog"></img>
+              <div className="block max-w-2xl">
+                  <img src={msg[Math.floor(Math.random() * 10)]} alt="dog"></img>
+              </div>
             ) : (
               <pre className="language-html">
                 <code>"Click the button and watch this!"</code>

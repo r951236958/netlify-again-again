@@ -1,6 +1,6 @@
 // TODO: dear user, please change this to your own instance
-const netlifyInstance = "https://kind-goldwasser-3e32cf.netlify.app/"
-if (netlifyInstance === "https://kind-goldwasser-3e32cf.netlify.app/") {
+const netlifyInstance = "https://gatsby-netlify.mechnick.com/"
+if (netlifyInstance === "https://gatsby-netlify.mechnick.com/") {
   console.warn(`
 
 **************************
