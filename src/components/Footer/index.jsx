@@ -7,6 +7,8 @@ export default function Footer() {
       <footer className="bg-gray-800 text-gray-300 px-6 lg:px-8 py-12">
         <div className="max-w-screen-xl mx-auto mb-6 lg:mb-12  ">
           <svg
+            width="36"
+            height="36"
             className="h-8 text-gray-300 bg-transparent fill-current"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 32 32"
@@ -22,9 +24,8 @@ export default function Footer() {
                 <ul className="space-y-2">
                   <li>
                     <Link
-                        href="#"
-                         className="text-gray-100 hover:text-gray-300 rounded hover:bg-gray-400 hover:bg-opacity-20 hover:underline font-normal px-3 py-2"
-                    
+                      href="#"
+                      className="text-gray-100 hover:text-gray-300 rounded hover:bg-gray-400 hover:bg-opacity-20 hover:underline font-normal px-3 py-2"
                     >
                       Landingpages
                     </Link>
@@ -76,6 +77,8 @@ export default function Footer() {
                   <li className="mb-2">
                     <Link href="#" className="flex space-x-2 footer-link">
                       <svg
+                        width="36"
+                        height="36"
                         className="h-6 w-6"
                         aria-hidden="true"
                         fill="currentColor"
@@ -87,11 +90,10 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li className="mb-2">
-                    <Link
-                      href="#"
-                      className="flex space-x-2 footer-link"
-                    >
+                    <Link href="#" className="flex space-x-2 footer-link">
                       <svg
+                        width="36"
+                        height="36"
                         className="h-6 w-6"
                         aria-hidden="true"
                         fill="currentColor"
@@ -107,11 +109,10 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li className="mb-2">
-                    <Link
-                      href="#"
-                      className="flex space-x-2 footer-link"
-                    >
+                    <Link href="#" className="flex space-x-2 footer-link">
                       <svg
+                        width="36"
+                        height="36"
                         className="h-6 w-6"
                         aria-hidden="true"
                         fill="currentColor"
@@ -140,7 +141,9 @@ export default function Footer() {
           <p className="text-sm text-center md:text-right">
             © {new Date().getFullYear()}, Built with
             {` `}
-            <Link className="footer-link" href="https://www.gatsbyjs.com">Gatsby</Link>
+            <Link className="footer-link" href="https://www.gatsbyjs.com">
+              Gatsby
+            </Link>
           </p>
         </div>
       </footer>

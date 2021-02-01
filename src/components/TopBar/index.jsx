@@ -30,6 +30,8 @@ export default function TopBar({ menuLinks }) {
                     Menu open: "hidden", Menu closed: "block"
                 */}
                 <svg
+                  width="27"
+                  height="27"
                   className={(!menuOpen ? "block" : "hidden") + " h-6 w-6"}
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -50,6 +52,8 @@ export default function TopBar({ menuLinks }) {
                   Menu open: "block", Menu closed: "hidden"
                 */}
                 <svg
+                  width="27"
+                  height="27"
                   className={(menuOpen ? "block" : "hidden") + " h-6 w-6"}
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -69,6 +73,8 @@ export default function TopBar({ menuLinks }) {
             <div className="flex-1 flex items-center justify-center md:items-stretch md:justify-start">
               <div className="flex flex-shrink-0 items-center">
                 <svg
+                  width="36"
+                  height="36"
                   className="block lg:hidden h-8 w-auto"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -81,6 +87,8 @@ export default function TopBar({ menuLinks }) {
                   />
                 </svg>
                 <svg
+                  width="136"
+                  height="36"
                   className="hidden lg:block h-8 w-auto"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -141,6 +149,8 @@ export default function TopBar({ menuLinks }) {
                   to="/app/login"
                 >
                   <svg
+                    width="27"
+                    height="27"
                     className="h-6 w-6"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512"
@@ -156,6 +166,8 @@ export default function TopBar({ menuLinks }) {
                     <span className="sr-only">View notifications</span>
                     {/* Heroicon name: bell */}
                     <svg
+                      width="27"
+                      height="27"
                       className="h-6 w-6"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -182,6 +194,8 @@ export default function TopBar({ menuLinks }) {
                       >
                         <span className="sr-only">Open user menu</span>
                         <svg
+                          width="27"
+                          height="27"
                           className="h-6 w-6"
                           fill="currentColor"
                           aria-hidden="true"
@@ -295,6 +309,8 @@ export default function TopBar({ menuLinks }) {
             <div className="flex items-center px-5">
               <div className="flex-shrink-0">
                 <svg
+                  width="27"
+                  height="27"
                   className="h-6 w-6 rounded-full text-gray-300 fill-current"
                   fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"
@@ -321,6 +337,8 @@ export default function TopBar({ menuLinks }) {
                   }}
                 >
                   <svg
+                    width="27"
+                    height="27"
                     className="w-6 h-6"
                     aria-label="sign-out"
                     fill="currentColor"
