@@ -1,8 +1,9 @@
 // import Tooltip from "@atlaskit/tooltip"
 // import { TextArea } from "@react-md/form"
-import React, { useRef, useState } from "react"
+import React, { useRef, useState, useEffect } from "react"
 import Select, { components } from "react-select"
-import { toast, ToastContainer } from 'react-toastify'
+import { toast, ToastContainer } from "react-toastify"
+// import { CopyToClipboard } from "react-copy-to-clipboard"
 import CreatableAdvancedSelect from "../components/CreatableAdvancedSelect"
 // import Container from "../components/Container"
 import Layout from "../components/Layout"
@@ -56,7 +57,8 @@ export default function HotKey() {
   const siteTitle = "快捷輸入"
   const innerText = ""
 
-  const [value, setValue] = useState()
+  const [isCopied, setIsCopied] = useState(false)
+  const [value, setValue] = useState("")
   const [inputValue, setInputValue] = useState("")
   const [copySuccess, setCopySuccess] = useState(innerText)
 
@@ -110,6 +112,12 @@ export default function HotKey() {
     })
   }
 
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      setIsCopied(document.queryCommandSupported("copy"))
+    }
+  }, [])
+
   return (
     <Layout>
       <SEO title={siteTitle} />
@@ -133,7 +141,7 @@ export default function HotKey() {
               }}
             />
           </div>
-          {document.queryCommandSupported("copy") && (
+          {isCopied && (
             <div className="tooltip inline-flex items-center">
               <button
                 className="text-teal-500 hover:text-teal-400 border border-teal-500 hover:border-teal-400 rounded-md bg-transparent hover:bg-gray-800 hover:bg-opacity-20 px-3 py-2 mx-2 my-2"

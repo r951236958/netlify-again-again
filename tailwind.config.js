@@ -1,7 +1,12 @@
 const colors = require("tailwindcss/colors")
 
 module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
+  purge: {
+    // enabled: true, // 開發環境預設關閉，NODE_ENV設置production時啟用
+    // preserveHtmlElements: false, // 保留HTML元素，預設true，如需禁用此功能設置為false
+    content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  },
+  //purge: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: "media", // or 'media' or 'class'
   theme: {
     screens: {

@@ -15,6 +15,65 @@ const Buttons = () => {
         <div className="bg-gray-700 bg-opacity-50 p-4">
           <div className="container mx-auto flex flex-wrap my-6 justify-center">
             <h3 className="text-2xl capitalize font-medium py-5">
+              gray Buttons
+            </h3>
+            <div className="w-full text-center mx-auto">
+              <button
+                type="button"
+                className="border border-gray-400 text-gray-700 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-200 hover:bg-opacity-40 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-gray-500 text-gray-800 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-300 hover:bg-opacity-40 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-gray-600 text-gray-800 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-400 hover:bg-opacity-40 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-gray-400 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-500 hover:bg-opacity-40 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-gray-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-600 hover:bg-opacity-40 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-gray-600 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-700 hover:bg-opacity-40 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-gray-700 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-800 hover:bg-opacity-40 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-gray-800 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-900 hover:bg-opacity-40 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-gray-900 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-gray-700 hover:bg-opacity-40 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+            </div>
+            <h3 className="text-2xl capitalize font-medium py-5">
               Gray Buttons
             </h3>
             <div className="w-full text-center mx-auto">
@@ -193,6 +252,65 @@ const Buttons = () => {
               </button>
             </div>
             <h3 className="text-2xl capitalize font-medium py-5">
+              amber Buttons
+            </h3>
+            <div className="w-full text-center mx-auto">
+              <button
+                type="button"
+                className="border border-amber-400 bg-amber-100 text-amber-700 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-amber-200 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-amber-500 bg-amber-200 text-amber-800 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-amber-300 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-amber-600 bg-amber-300 text-amber-800 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-amber-400 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-amber-400 bg-amber-400 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-amber-500 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-amber-500 bg-amber-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-amber-600 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-amber-600 bg-amber-600 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-amber-700 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-amber-700 bg-amber-700 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-amber-800 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-amber-800 bg-amber-800 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-amber-900 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-amber-900 bg-amber-900 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-amber-700 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+            </div>
+            <h3 className="text-2xl capitalize font-medium py-5">
               yellow Buttons
             </h3>
             <div className="w-full text-center mx-auto">
@@ -252,6 +370,65 @@ const Buttons = () => {
               </button>
             </div>
             <h3 className="text-2xl capitalize font-medium py-5">
+              lime Buttons
+            </h3>
+            <div className="w-full text-center mx-auto">
+              <button
+                type="button"
+                className="border border-lime-400 bg-lime-100 text-lime-700 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-lime-200 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-lime-500 bg-lime-200 text-lime-800 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-lime-300 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-lime-600 bg-lime-300 text-lime-800 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-lime-400 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-lime-400 bg-lime-400 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-lime-500 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-lime-500 bg-lime-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-lime-600 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-lime-600 bg-lime-600 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-lime-700 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-lime-700 bg-lime-700 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-lime-800 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-lime-800 bg-lime-800 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-lime-900 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-lime-900 bg-lime-900 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-lime-700 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+            </div>
+            <h3 className="text-2xl capitalize font-medium py-5">
               green Buttons
             </h3>
             <div className="w-full text-center mx-auto">
@@ -306,6 +483,65 @@ const Buttons = () => {
               <button
                 type="button"
                 className="border border-green-900 bg-green-900 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-700 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+            </div>
+            <h3 className="text-2xl capitalize font-medium py-5">
+              cyan Buttons
+            </h3>
+            <div className="w-full text-center mx-auto">
+              <button
+                type="button"
+                className="border border-cyan-400 bg-cyan-100 text-cyan-700 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-cyan-200 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-cyan-500 bg-cyan-200 text-cyan-800 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-cyan-300 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-cyan-600 bg-cyan-300 text-cyan-800 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-cyan-400 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-cyan-400 bg-cyan-400 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-cyan-500 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-cyan-500 bg-cyan-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-cyan-600 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-cyan-600 bg-cyan-600 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-cyan-700 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-cyan-700 bg-cyan-700 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-cyan-800 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-cyan-800 bg-cyan-800 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-cyan-900 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-cyan-900 bg-cyan-900 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-cyan-700 focus:outline-none focus:shadow-outline"
               >
                 Buttons
               </button>
@@ -424,6 +660,124 @@ const Buttons = () => {
               <button
                 type="button"
                 className="border border-blue-900 bg-blue-900 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+            </div>
+            <h3 className="text-2xl capitalize font-medium py-5">
+              lightBlue Buttons
+            </h3>
+            <div className="w-full text-center mx-auto">
+              <button
+                type="button"
+                className="border border-lightBlue-400 bg-lightBlue-100 text-lightBlue-700 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-lightBlue-200 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-lightBlue-500 bg-lightBlue-200 text-lightBlue-800 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-lightBlue-300 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-lightBlue-600 bg-lightBlue-300 text-lightBlue-800 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-lightBlue-400 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-lightBlue-400 bg-lightBlue-400 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-lightBlue-500 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-lightBlue-500 bg-lightBlue-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-lightBlue-600 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-lightBlue-600 bg-lightBlue-600 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-lightBlue-700 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-lightBlue-700 bg-lightBlue-700 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-lightBlue-800 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-lightBlue-800 bg-lightBlue-800 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-lightBlue-900 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-lightBlue-900 bg-lightBlue-900 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-lightBlue-700 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+            </div>
+            <h3 className="text-2xl capitalize font-medium py-5">
+              blueGray Buttons
+            </h3>
+            <div className="w-full text-center mx-auto">
+              <button
+                type="button"
+                className="border border-blueGray-400 bg-blueGray-100 text-blueGray-700 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-blueGray-200 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-blueGray-500 bg-blueGray-200 text-blueGray-800 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-blueGray-300 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-blueGray-600 bg-blueGray-300 text-blueGray-800 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-blueGray-400 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-blueGray-400 bg-blueGray-400 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-blueGray-500 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-blueGray-500 bg-blueGray-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-blueGray-600 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-blueGray-600 bg-blueGray-600 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-blueGray-700 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-blueGray-700 bg-blueGray-700 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-blueGray-800 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-blueGray-800 bg-blueGray-800 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-blueGray-900 focus:outline-none focus:shadow-outline"
+              >
+                Buttons
+              </button>
+              <button
+                type="button"
+                className="border border-blueGray-900 bg-blueGray-900 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-blueGray-700 focus:outline-none focus:shadow-outline"
               >
                 Buttons
               </button>
