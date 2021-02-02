@@ -2,7 +2,7 @@ import { Transition } from "@headlessui/react"
 import { navigate } from "gatsby"
 import { Link } from "gatsby-theme-material-ui"
 import PropTypes from "prop-types"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { useIdentityContext } from "react-netlify-identity-widget"
 
 export default function TopBar({ menuLinks }) {
@@ -10,9 +10,13 @@ export default function TopBar({ menuLinks }) {
   const { isLoggedIn, logoutUser } = useIdentityContext()
   const [menuOpen, setMenuOpen] = useState(false)
 
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [])
+
   return (
-    <div>
-      <nav className="bg-gray-900">
+    <div className="bg-blueGray-900">
+      <nav className="bg-darkBlue-900">
         <div className="max-w-7xl mx-auto px-2 md:px-6 lg:px-8">
           <div className="relative flex items-center justify-between h-16">
             <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
@@ -72,41 +76,43 @@ export default function TopBar({ menuLinks }) {
             </div>
             <div className="flex-1 flex items-center justify-center md:items-stretch md:justify-start">
               <div className="flex flex-shrink-0 items-center">
-                <svg
-                  width="36"
-                  height="36"
-                  className="block lg:hidden h-8 w-auto"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 28 28"
-                >
-                  <circle cx="14" cy="14" r="14" fill="#639" />
-                  <path
-                    fill="#fff"
-                    d="M6.2 21.8C4.1 19.7 3 16.9 3 14.2L13.9 25c-2.8-.1-5.6-1.1-7.7-3.2zm10.2 2.9L3.3 11.6C4.4 6.7 8.8 3 14 3c3.7 0 6.9 1.8 8.9 4.5l-1.5 1.3C19.7 6.5 17 5 14 5c-3.9 0-7.2 2.5-8.5 6L17 22.5c2.9-1 5.1-3.5 5.8-6.5H18v-2h7c0 5.2-3.7 9.6-8.6 10.7z"
-                  />
-                </svg>
-                <svg
-                  width="136"
-                  height="36"
-                  className="hidden lg:block h-8 w-auto"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 106 28"
-                >
-                  <path
-                    fill="#fff"
-                    d="M62.9 12h2.8v10h-2.8v-1.3c-1 1.5-2.3 1.6-3.1 1.6-3.1 0-5.1-2.4-5.1-5.3 0-3 2-5.3 4.9-5.3.8 0 2.3.1 3.2 1.6V12zm-5.2 5c0 1.6 1.1 2.8 2.8 2.8 1.6 0 2.8-1.2 2.8-2.8 0-1.6-1.1-2.8-2.8-2.8-1.6 0-2.8 1.2-2.8 2.8zm13.5-2.6V22h-2.8v-7.6h-1.1V12h1.1V8.6h2.8V12h1.9v2.4h-1.9zm8.5 0c-.7-.6-1.3-.7-1.6-.7-.7 0-1.1.3-1.1.8 0 .3.1.6.9.9l.7.2c.8.3 2 .6 2.5 1.4.3.4.5 1 .5 1.7 0 .9-.3 1.8-1.1 2.5s-1.8 1.1-3 1.1c-2.1 0-3.2-1-3.9-1.7l1.5-1.7c.6.6 1.4 1.2 2.2 1.2.8 0 1.4-.4 1.4-1.1 0-.6-.5-.9-.9-1l-.6-.2c-.7-.3-1.5-.6-2.1-1.2-.5-.5-.8-1.1-.8-1.9 0-1 .5-1.8 1-2.3.8-.6 1.8-.7 2.6-.7.7 0 1.9.1 3.2 1.1l-1.4 1.6zm6.1-1.1c1-1.4 2.4-1.6 3.2-1.6 2.9 0 4.9 2.3 4.9 5.3s-2 5.3-5 5.3c-.6 0-2.1-.1-3.2-1.6V22H83V5.2h2.8v8.1zm-.3 3.7c0 1.6 1.1 2.8 2.8 2.8 1.6 0 2.8-1.2 2.8-2.8 0-1.6-1.1-2.8-2.8-2.8-1.7 0-2.8 1.2-2.8 2.8zm13 3.5L93.7 12H97l3.1 5.7 2.8-5.7h3.2l-8 15.3h-3.2l3.6-6.8zM54 13.7h-7v2.8h3.7c-.6 1.9-2 3.2-4.6 3.2-2.9 0-5-2.4-5-5.3S43.1 9 46 9c1.6 0 3.2.8 4.2 2.1l2.3-1.5C51 7.5 48.6 6.3 46 6.3c-4.4 0-8 3.6-8 8.1s3.4 8.1 8 8.1 8-3.6 8-8.1c.1-.3 0-.5 0-.7z"
-                  />
-                  <path
-                    fill="#fff"
-                    d="M25 14h-7v2h4.8c-.7 3-2.9 5.5-5.8 6.5L5.5 11c1.2-3.5 4.6-6 8.5-6 3 0 5.7 1.5 7.4 3.8l1.5-1.3C20.9 4.8 17.7 3 14 3 8.8 3 4.4 6.7 3.3 11.6l13.2 13.2C21.3 23.6 25 19.2 25 14zm-22 .1c0 2.8 1.1 5.5 3.2 7.6 2.1 2.1 4.9 3.2 7.6 3.2L3 14.1z"
-                  />
-                  <path
-                    d="M14 0C6.3 0 0 6.3 0 14s6.3 14 14 14 14-6.3 14-14S21.7 0 14 0zM6.2 21.8C4.1 19.7 3 16.9 3 14.2L13.9 25c-2.8-.1-5.6-1.1-7.7-3.2zm10.2 2.9L3.3 11.6C4.4 6.7 8.8 3 14 3c3.7 0 6.9 1.8 8.9 4.5l-1.5 1.3C19.7 6.5 17 5 14 5c-3.9 0-7.2 2.5-8.5 6L17 22.5c2.9-1 5.1-3.5 5.8-6.5H18v-2h7c0 5.2-3.7 9.6-8.6 10.7z"
-                    fill="#639"
-                  />
-                </svg>
+                <Link to="/">
+                  <svg
+                    width="36"
+                    height="36"
+                    className="block lg:hidden h-8 w-auto"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 28 28"
+                  >
+                    <circle cx="14" cy="14" r="14" fill="#639" />
+                    <path
+                      fill="#fff"
+                      d="M6.2 21.8C4.1 19.7 3 16.9 3 14.2L13.9 25c-2.8-.1-5.6-1.1-7.7-3.2zm10.2 2.9L3.3 11.6C4.4 6.7 8.8 3 14 3c3.7 0 6.9 1.8 8.9 4.5l-1.5 1.3C19.7 6.5 17 5 14 5c-3.9 0-7.2 2.5-8.5 6L17 22.5c2.9-1 5.1-3.5 5.8-6.5H18v-2h7c0 5.2-3.7 9.6-8.6 10.7z"
+                    />
+                  </svg>
+                  <svg
+                    width="136"
+                    height="36"
+                    className="hidden lg:block h-8 w-auto"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 106 28"
+                  >
+                    <path
+                      fill="#fff"
+                      d="M62.9 12h2.8v10h-2.8v-1.3c-1 1.5-2.3 1.6-3.1 1.6-3.1 0-5.1-2.4-5.1-5.3 0-3 2-5.3 4.9-5.3.8 0 2.3.1 3.2 1.6V12zm-5.2 5c0 1.6 1.1 2.8 2.8 2.8 1.6 0 2.8-1.2 2.8-2.8 0-1.6-1.1-2.8-2.8-2.8-1.6 0-2.8 1.2-2.8 2.8zm13.5-2.6V22h-2.8v-7.6h-1.1V12h1.1V8.6h2.8V12h1.9v2.4h-1.9zm8.5 0c-.7-.6-1.3-.7-1.6-.7-.7 0-1.1.3-1.1.8 0 .3.1.6.9.9l.7.2c.8.3 2 .6 2.5 1.4.3.4.5 1 .5 1.7 0 .9-.3 1.8-1.1 2.5s-1.8 1.1-3 1.1c-2.1 0-3.2-1-3.9-1.7l1.5-1.7c.6.6 1.4 1.2 2.2 1.2.8 0 1.4-.4 1.4-1.1 0-.6-.5-.9-.9-1l-.6-.2c-.7-.3-1.5-.6-2.1-1.2-.5-.5-.8-1.1-.8-1.9 0-1 .5-1.8 1-2.3.8-.6 1.8-.7 2.6-.7.7 0 1.9.1 3.2 1.1l-1.4 1.6zm6.1-1.1c1-1.4 2.4-1.6 3.2-1.6 2.9 0 4.9 2.3 4.9 5.3s-2 5.3-5 5.3c-.6 0-2.1-.1-3.2-1.6V22H83V5.2h2.8v8.1zm-.3 3.7c0 1.6 1.1 2.8 2.8 2.8 1.6 0 2.8-1.2 2.8-2.8 0-1.6-1.1-2.8-2.8-2.8-1.7 0-2.8 1.2-2.8 2.8zm13 3.5L93.7 12H97l3.1 5.7 2.8-5.7h3.2l-8 15.3h-3.2l3.6-6.8zM54 13.7h-7v2.8h3.7c-.6 1.9-2 3.2-4.6 3.2-2.9 0-5-2.4-5-5.3S43.1 9 46 9c1.6 0 3.2.8 4.2 2.1l2.3-1.5C51 7.5 48.6 6.3 46 6.3c-4.4 0-8 3.6-8 8.1s3.4 8.1 8 8.1 8-3.6 8-8.1c.1-.3 0-.5 0-.7z"
+                    />
+                    <path
+                      fill="#fff"
+                      d="M25 14h-7v2h4.8c-.7 3-2.9 5.5-5.8 6.5L5.5 11c1.2-3.5 4.6-6 8.5-6 3 0 5.7 1.5 7.4 3.8l1.5-1.3C20.9 4.8 17.7 3 14 3 8.8 3 4.4 6.7 3.3 11.6l13.2 13.2C21.3 23.6 25 19.2 25 14zm-22 .1c0 2.8 1.1 5.5 3.2 7.6 2.1 2.1 4.9 3.2 7.6 3.2L3 14.1z"
+                    />
+                    <path
+                      d="M14 0C6.3 0 0 6.3 0 14s6.3 14 14 14 14-6.3 14-14S21.7 0 14 0zM6.2 21.8C4.1 19.7 3 16.9 3 14.2L13.9 25c-2.8-.1-5.6-1.1-7.7-3.2zm10.2 2.9L3.3 11.6C4.4 6.7 8.8 3 14 3c3.7 0 6.9 1.8 8.9 4.5l-1.5 1.3C19.7 6.5 17 5 14 5c-3.9 0-7.2 2.5-8.5 6L17 22.5c2.9-1 5.1-3.5 5.8-6.5H18v-2h7c0 5.2-3.7 9.6-8.6 10.7z"
+                      fill="#639"
+                    />
+                  </svg>
+                </Link>
               </div>
               <div className="hidden md:block md:ml-6">
                 <div className="flex space-x-4">
@@ -114,7 +120,8 @@ export default function TopBar({ menuLinks }) {
                   {menuLinks.map(link => (
                     <Link
                       key={link.name}
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white active:bg-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+                      activeClassName="active"
+                      className="text-gray-300 hover:bg-blueGray-500 hover:bg-opacity-40 hover:text-white active:bg-gray-600 px-3 py-2 rounded-md text-sm font-medium hover:no-underline"
                       to={link.link}
                     >
                       {link.name}
@@ -127,7 +134,7 @@ export default function TopBar({ menuLinks }) {
               {!isLoggedIn ? (
                 <Link
                   type="button"
-                  className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800"
+                  className="p-1 rounded-full text-gray-300 hover:text-white focus:outline-none"
                   to="/app/login"
                 >
                   <svg
@@ -144,7 +151,7 @@ export default function TopBar({ menuLinks }) {
                 </Link>
               ) : (
                 <>
-                  <button className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                  <button className="p-1 rounded-full text-gray-300 hover:text-white focus:outline-none ">
                     <span className="sr-only">View notifications</span>
                     {/* Heroicon name: bell */}
                     <svg
@@ -170,7 +177,7 @@ export default function TopBar({ menuLinks }) {
                     <div>
                       <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                        className="flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                         id="user-menu"
                         aria-haspopup="true"
                       >
@@ -261,13 +268,13 @@ export default function TopBar({ menuLinks }) {
             {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
             <Link
               to="/"
-              className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+              className="bg-darkBlue-900 text-gray-300 hover:no-underline hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               Home
             </Link>
 
             <Link
-              className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+              className="bg-darkBlue-900 text-gray-300 hover:no-underline hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               to="/app/"
             >
               App
@@ -275,16 +282,16 @@ export default function TopBar({ menuLinks }) {
 
             <Link
               to="/page-2/"
-              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              className="bg-darkBlue-900 text-gray-300 hover:no-underline hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               Page2
             </Link>
 
             <Link
-              to="/using-typescript/"
-              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              to="/buttons/"
+              className="bg-darkBlue-900 text-gray-300 hover:no-underline hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
-              TypeScript
+              Buttons
             </Link>
           </div>
           <div className="pt-4 pb-3 border-t border-gray-700">
@@ -336,21 +343,21 @@ export default function TopBar({ menuLinks }) {
               <div className="mt-3 px-2 space-y-1">
                 <Link
                   to="/app/"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                  className="block px-3 py-2 rounded-md text-base hover:no-underline font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                 >
                   App
                 </Link>
 
                 <Link
                   to="/app/profile/"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                  className="block px-3 py-2 rounded-md text-base hover:no-underline font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                 >
                   Profile
                 </Link>
 
                 <a
                   href="#logout"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                  className="block px-3 py-2 rounded-md text-base hover:no-underline font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                   onClick={async event => {
                     event.preventDefault()
                     await logoutUser()

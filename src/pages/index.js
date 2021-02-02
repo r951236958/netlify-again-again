@@ -90,15 +90,35 @@ class IndexPage extends React.Component {
 
                 <div className="mt-8 lg:mt-0">
                   <a
-                    className="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150"
+                    className="mt-3 flex items-start rounded-lg border border-gray-700 hover:border-cyan-400 px-5 py-3 text-base font-medium text-white hover:text-cyan-400 hover:bg-gray-800 transition ease-in-out duration-150"
                     href="https://github.com/sw-yx/jamstack-hackathon-starter"
                   >
+                    <svg
+                      width="27"
+                      height="27"
+                      className="mr-3 h-6 w-6 text-gray-500 hover:text-cyan-400"
+                      fill="currentColor"
+                      viewBox="0 0 496 512"
+                    >
+                      <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                    </svg>
                     view source here
                   </a>
                   <Link
-                    className="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150"
+                    className="mt-3 flex items-start rounded-lg border border-gray-700  hover:border-cyan-400 px-5 py-3 text-base font-medium text-white hover:text-cyan-400 hover:bg-gray-800 transition ease-in-out duration-150"
                     to="/app/"
                   >
+                    <svg
+                      width="27"
+                      height="27"
+                      className="mt-0.5 mr-4 h-5 w-5 text-gray-500 hover:text-cyan-400"
+                      aria-hidden="true"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M17.751 3l.185.005a3.25 3.25 0 013.06 3.06l.005.185v11.5l-.005.184A3.25 3.25 0 0117.751 21H6.25a3.25 3.25 0 01-3.245-3.066L3 17.75V6.25a3.25 3.25 0 013.066-3.245L6.25 3h11.501zM19.5 8H4.501L4.5 17.75a1.75 1.75 0 001.606 1.744l.144.006h11.501l.144-.006a1.75 1.75 0 001.6-1.593l.006-.151L19.5 8zm-9.25 1.5a.75.75 0 01.743.648l.007.102v7a.75.75 0 01-.648.743L10.25 18h-3.5a.75.75 0 01-.743-.648L6 17.25v-7a.75.75 0 01.648-.743L6.75 9.5h3.5zM9.5 11h-2v5.5h2V11zm6.75 1.503a.75.75 0 01.102 1.493l-.102.007h-3.496a.75.75 0 01-.101-1.493l.101-.007h3.496zm1-3.003a.75.75 0 01.102 1.493L17.25 11h-4.496a.75.75 0 01-.101-1.493l.101-.007h4.496z" />
+                    </svg>
+
                     <b>Go to App (with Netlify Identity)</b>
                   </Link>
                   <a

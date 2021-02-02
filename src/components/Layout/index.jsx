@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby"
 import Prism from "prismjs"
 import React, { useEffect } from "react"
-import Container from "../Container"
+import Container from "@material-ui/core/Container"
 import Footer from "../Footer"
 import TopBar from "../TopBar"
 
@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
         />
         <div className="max-w-5xl mt-0 mb-auto mx-auto pt-0 pb-5 px-4">
           <main>
-            <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+            <div className="min-h-screen py2 px-4 sm:px-6 lg:px-8">
               <Container>{children}</Container>
             </div>
           </main>
