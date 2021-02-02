@@ -1,52 +1,13 @@
-// import { GrGatsbyjs } from "@react-icons/all-files/gr/GrGatsbyjs"
-import AssignmentTurnedInIcon from "@material-ui/icons/AssignmentTurnedIn"
-import { Button } from "@react-md/button"
-import { TextArea, TextField } from "@react-md/form"
-import { FontIcon } from "@react-md/icon"
 import { Link } from "gatsby"
 import React from "react"
-import { CopyToClipboard } from "react-copy-to-clipboard"
+
 import Hr from "../components/Hr"
 import Image from "../components/image"
 import Layout from "../components/Layout"
 import P from "../components/P"
 import SEO from "../components/SEO"
 import Title from "../components/Title"
-
-
-
 class IndexPage extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      input1: "",
-      input2: "",
-      message:
-        "Copy text to the Clipboard in React without a package - Clue Mediator",
-      btnText: "Copy to Clipboard",
-    }
-    this.handleChange = this.handleChange.bind(this)
-  }
-
-
-  handleChange(input, value ) {
-    this.setState({
-      [input]: value,
-      copied: false,
-      
-    }
-  
-    )
-  }
-
-  // handle copy to clipboard
-  copyToClipboard = e => {
-    this.refs.textArea.select()
-    document.execCommand("copy")
-    e.target.focus()
-    this.setState({ btnText: "Copied!" })
-  }
-
   state = { loading: false, msg: null }
   handleClick = e => {
     e.preventDefault()
@@ -58,17 +19,14 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    const { message, btnText } = this.state
     const { loading, msg } = this.state
     const siteTitle = "Home"
-
 
     return (
       <Layout>
         <SEO title={siteTitle} keywords={[`gatsby`, `application`, `react`]} />
         <Title>{siteTitle}</Title>
         <div>
-        
           <div className="flex flex-col lg:flex-row justify-between divide-x-0 lg:divide-dashed lg:divide-x-2 divide-red-700">
             <div className="mr-0 lg:mr-4">
               <P className="text-base font-semibold text-teal-400 uppercase tracking-wider">
@@ -129,6 +87,7 @@ class IndexPage extends React.Component {
                     </a>
                   </div>
                 </div>
+
                 <div className="mt-8 lg:mt-0">
                   <a
                     className="mt-3 flex items-start rounded-lg border border-gray-700 px-5 py-3 text-base font-medium text-white hover:bg-gray-800 transition ease-in-out duration-150"
@@ -163,106 +122,6 @@ class IndexPage extends React.Component {
                 </div>
               </div>
 
-              <div>
-                <h3>
-                  Copy text to Clipboard -{" "}
-                  <a className="link" href="https://www.cluemediator.com">
-                    Clue Mediator
-                  </a>
-                </h3>
-                <TextArea
-                  id="copy-text"
-                  ref="textArea"
-                  value={message}
-                  onChange={e =>
-                    this.setState({
-                      message: e.target.value,
-                      btnText: "Copy to Clipboard",
-                    })
-                  }
-                />
-                <br />
-                <div className="flex flex-col space-y-4">
-                  <div className="flex flex-col">
-                    <div>
-                      <P>
-                        Input1: <span>{this.state.input1}</span>
-                      </P>
-                    </div>
-                    <div className="flex flex-grow">
-                      <div className="inline-flex">
-                        <TextField
-                          aria-describedby="input1"
-                          label="Input1"
-                          name="input1"
-                          id="value01"
-                          onChange={e =>
-                            this.handleChange("input1", e.target.value)
-                          }
-                        />
-                      </div>
-                      <div className="inline-flex">
-                        <CopyToClipboard
-                          text={this.state.input1}
-                          onCopy={() => this.setState({ copied: true })}
-                        >
-                          <Button
-                            theme="secondary"
-                            buttonType="icon"
-                            aria-label="copy-text"
-                          >
-                            {this.state.copied ? (
-                              <AssignmentTurnedInIcon />
-                            ) : (
-                              <FontIcon>content_paste</FontIcon>
-                            )}
-                          </Button>
-                        </CopyToClipboard>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex flex-1">
-                    <P>
-                      Input2: <span>{this.state.input2}</span>
-                    </P>
-
-                    <TextArea
-                      aria-describedby="input2"
-                      label="Input2"
-                      name="input2"
-                      id="value02"
-                      onChange={e =>
-                        this.handleChange("input2", e.target.value)
-                      }
-                    />
-                    <CopyToClipboard
-                      text={this.state.input2}
-                      onCopy={() => this.setState({ copied: true })}
-                    >
-                      <Button
-                        theme="secondary"
-                        buttonType="icon"
-                        aria-label="copy-text"
-                      >
-                        {this.state.copied ? (
-                          <AssignmentTurnedInIcon />
-                        ) : (
-                          <FontIcon>content_paste</FontIcon>
-                        )}
-                      </Button>
-                    </CopyToClipboard>
-                  </div>
-                </div>
-                <br />
-                {document.queryCommandSupported("copy") && (
-                  <button
-                    className="text-teal-500 hover:text-teal-400 border border-teal-500 hover:border-teal-400 rounded-md bg-transparent hover:bg-gray-800 hover:bg-opacity-20 px-3 py-2 mx-2 mb-2"
-                    onClick={this.copyToClipboard}
-                  >
-                    {btnText}
-                  </button>
-                )}
-              </div>
               <Hr />
               <div className="bg-gray-900">
                 <div className="mx-auto py-16 px-4 sm:px-6 lg:px-8">
