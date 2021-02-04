@@ -1,15 +1,7 @@
-// import Tooltip from "@atlaskit/tooltip"
-// import { TextArea } from "@react-md/form"
-import React, { useRef, useState, useEffect } from "react"
-import Select, { components } from "react-select"
-import { toast, ToastContainer } from "react-toastify"
-// import { CopyToClipboard } from "react-copy-to-clipboard"
-import CreatableAdvancedSelect from "../components/CreatableAdvancedSelect"
-// import Container from "../components/Container"
+import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
-
-const Input = props => <components.Input {...props} isHidden={false} />
+import Title from "../components/Title"
 
 const tableItems = [
   {
@@ -55,109 +47,13 @@ const tableItems = [
 ]
 export default function HotKey() {
   const siteTitle = "快捷輸入"
-  const innerText = ""
-
-  const [isCopied, setIsCopied] = useState(false)
-  const [value, setValue] = useState("")
-  const [inputValue, setInputValue] = useState("")
-  const [copySuccess, setCopySuccess] = useState(innerText)
-
-  //const handleChange = event => {
-  //  setValue(event.target.value)
-  //}
-
-  const options = useRef([
-    { label: "Editable Options", value: 1 },
-    { label: "Black Magic", value: 2 },
-    { label: "Very Possible ", value: 3 },
-  ]).current
-
-  const selectRef = useRef()
-
-  const onInputChange = (inputValue, { action }) => {
-    // onBlur => setInputValue to last selected value
-    if (action === "input-blur") {
-      setInputValue(value ? value.label : "")
-    }
-
-    // onInputChange => update inputValue
-    else if (action === "input-change") {
-      setInputValue(inputValue)
-    }
-  }
-
-  const onChange = option => {
-    setValue(option)
-    setInputValue(option ? option.label : "")
-  }
-
-  const onFocus = () => value && selectRef.current.select.inputRef.select()
-
-  function copyToClipboard(e) {
-    selectRef.current.select.inputRef.select()
-    document.execCommand("copy")
-    // This is just personal preference.
-    // I prefer to not show the the whole text area selected.
-
-    setCopySuccess("Copied!")
-
-    toast.dark("🦄🦄Copied!", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    })
-  }
-
-  useEffect(() => {
-    if (typeof document !== "undefined") {
-      setIsCopied(document.queryCommandSupported("copy"))
-    }
-  }, [])
 
   return (
     <Layout>
       <SEO title={siteTitle} />
-      <ToastContainer />
-      <div className="w-2/3 mx-auto">
-        <div>
-          <div className="text-gray-800">
-            <Select
-              closeMenuOnSelect={false}
-              ref={selectRef}
-              options={options}
-              isClearable={true}
-              value={value}
-              inputValue={inputValue}
-              onInputChange={onInputChange}
-              onChange={onChange}
-              onFocus={onFocus}
-              controlShouldRenderValue={false}
-              components={{
-                Input,
-              }}
-            />
-          </div>
-          {isCopied && (
-            <div className="tooltip inline-flex items-center">
-              <button
-                className="text-teal-500 hover:text-teal-400 border border-teal-500 hover:border-teal-400 rounded-md bg-transparent hover:bg-gray-800 hover:bg-opacity-20 px-3 py-2 mx-2 my-2"
-                onClick={copyToClipboard}
-                disabled={!value}
-              >
-                <span className="tooltiptext">{copySuccess}</span>
-                Copy
-              </button>
-            </div>
-          )}
-        </div>
+      <Title>{siteTitle}</Title>
 
-        <div className="text-gray-800 my-4">
-          <CreatableAdvancedSelect />
-        </div>
+      <div className="w-2/3 mx-auto">
         <div className="flex flex-col">
           <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">

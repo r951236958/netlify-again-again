@@ -51,6 +51,10 @@ module.exports = {
         name: "HotKey",
         link: "/hotkey/",
       },
+      {
+        name: "Test",
+        link: "/test/",
+      },
     ],
   },
 
