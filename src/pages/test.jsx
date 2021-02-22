@@ -8,7 +8,6 @@ import CreatableAdvancedSelect from "../components/CreatableAdvancedSelect"
 // import Container from "../components/Container"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
-import Title from "../components/Title"
 
 const Input = props => <components.Input {...props} isHidden={false} />
 
@@ -56,7 +55,7 @@ const tableItems = [
 ]
 
 export default function Test() {
-  const siteTitle = "Everything test in here"
+  const title = "Everything test in here"
   const innerText = ""
 
   const [isCopied, setIsCopied] = useState(false)
@@ -121,9 +120,9 @@ export default function Test() {
   }, [])
 
   return (
-    <Layout>
-      <SEO title={siteTitle} />
-      <Title>{siteTitle}</Title>
+    <Layout siteTitle={title}>
+      <SEO title={title} />
+
       <ToastContainer />
       <div className="w-2/3 mx-auto">
         <div>

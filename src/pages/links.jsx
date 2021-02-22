@@ -4,15 +4,14 @@ import LinkList from "../components/LinkList"
 import Copy2Clipboard from "../components/Copy2Clipboard"
 import P from "../components/P"
 import SEO from "../components/SEO"
-import Title from "../components/Title"
 
 const Links = () => {
-  const siteTitle = "My Links"
+  const title = "My Links"
 
   return (
-    <Layout>
-      <SEO title={siteTitle} />
-      <Title>{siteTitle}</Title>
+    <Layout siteTitle={title}>
+      <SEO title={title} />
+
       <P>hi</P>
       <Copy2Clipboard />
       <LinkList />

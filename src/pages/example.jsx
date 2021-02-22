@@ -1,9 +1,10 @@
 import React from "react"
+
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 
-const Index = () => {
-  const title = "Home"
+const Example = () => {
+  const title = "Example Page"
   return (
     <Layout siteTitle={title}>
       <SEO title={title} />
@@ -11,4 +12,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default Example

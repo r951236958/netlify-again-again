@@ -19,9 +19,9 @@ More docs: https://www.netlify.com/docs/identity/
 
 module.exports = {
   siteMetadata: {
-    title: "JAMstack Hackathon Starter",
-    description: `Kick off your next, great Gatsby app.`,
-    author: `@swyx`,
+    title: "React App with Google Spreadsheet",
+    description: `This is a fork of https://github.com/gatsbyjs/gatsby-starter-default which shows how to use Netlify Identity and Netlify Functions (via Netlify Dev) with Gatsby. Start here for your next JAMstack hackathon or use this as a reference implementation.`,
+    author: `Nick Lin`,
     menuLinks: [
       {
         name: "Home",
@@ -40,16 +40,16 @@ module.exports = {
         link: "/page-2/",
       },
       {
-        name: "Buttons",
-        link: "/buttons/",
+        name: "Example",
+        link: "/example/",
       },
       {
         name: "Links",
         link: "/links/",
       },
       {
-        name: "HotKey",
-        link: "/hotkey/",
+        name: "Form",
+        link: "/form/",
       },
       {
         name: "Test",

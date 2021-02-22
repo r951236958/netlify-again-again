@@ -2,14 +2,13 @@ import React from "react"
 import GoogleSheets from "../components/GoogleSheets"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
-import Title from "../components/Title"
 
 const Form = () => {
-  const siteTitle = "Buttons Example"
+  const title = "Google試算表"
   return (
-    <Layout>
-      <SEO title={siteTitle} />
-      <Title>{siteTitle}</Title>
+    <Layout siteTitle={title}>
+      <SEO title={title} />
+
       <GoogleSheets />
     </Layout>
   )

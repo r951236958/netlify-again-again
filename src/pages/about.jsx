@@ -16,18 +16,17 @@ import { graphql } from "gatsby"
 import React from "react"
 import CTABlock from "../components/CTABlock"
 import Layout from "../components/Layout"
-import Title from "../components/Title"
 import SEO from "../components/SEO"
 
 const MenuLink = props => <MenuItemLink {...props} component={RouterLink} />
 
 export default function About({ data }) {
-  const siteTitle = "About Page"
+  const title = "About Page"
 
   return (
-    <Layout>
-      <SEO title={siteTitle} />
-      <Title>About {data.site.siteMetadata.title}</Title>
+    <Layout siteTitle={title}>
+      <SEO title={title} />
+
       <div className="text-green-500">
         <p>Such wow. Very React.</p>
       </div>
