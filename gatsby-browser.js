@@ -2,10 +2,10 @@ import "prismjs/themes/prism-okaidia.css"
 import React from "react"
 import { IdentityContextProvider } from "react-netlify-identity"
 import "react-toastify/dist/ReactToastify.css"
+// import "./src/styles/tailwind.css"
 import "./src/styles/global.scss"
 import "./src/styles/index.css"
 import "./src/styles/layout.css"
-// import "./src/styles/tailwind.css"
 
 
 export const wrapPageElement = ({ element }) => {
