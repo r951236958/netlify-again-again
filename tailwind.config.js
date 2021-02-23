@@ -2,7 +2,7 @@ const colors = require("tailwindcss/colors")
 
 module.exports = {
   purge: {
-    // enabled: true, // 開發環境預設關閉，NODE_ENV設置production時啟用
+    enabled: true, // 開發環境預設關閉，NODE_ENV設置production時啟用
     // preserveHtmlElements: false, // 保留HTML元素，預設true，如需禁用此功能設置為false
     content: ["./src/**/*.{js,jsx,ts,tsx}"],
   },
@@ -339,6 +339,7 @@ module.exports = {
       7: "7",
     },
     transformOrigin: {
+      "0": "0%",
       center: "center",
       top: "top",
       "top-right": "top right",
@@ -666,6 +667,7 @@ module.exports = {
     }),
     zIndex: {
       auto: "auto",
+      "-1": "-1",
       0: "0",
       10: "10",
       20: "20",
@@ -798,7 +800,7 @@ module.exports = {
     outline: ["responsive", "focus-within", "focus"],
     overflow: ["responsive"],
     overscrollBehavior: ["responsive"],
-    padding: ["responsive"],
+    padding: ["hover", "focus", "responsive"],
     placeContent: ["responsive"],
     placeItems: ["responsive"],
     placeSelf: ["responsive"],

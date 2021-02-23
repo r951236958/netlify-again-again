@@ -40,16 +40,16 @@ module.exports = {
         link: "/page-2/",
       },
       {
-        name: "Buttons",
-        link: "/buttons/",
+        name: "Todo",
+        link: "/todo/",
       },
       {
         name: "Links",
         link: "/links/",
       },
       {
-        name: "HotKey",
-        link: "/hotkey/",
+        name: "Form",
+        link: "/form/",
       },
       {
         name: "Test",

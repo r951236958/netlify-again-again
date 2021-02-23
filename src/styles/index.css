@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Nunito&display=swap');
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Nunito&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -17,9 +17,8 @@ body {
   background: #000;
   color: #fff;
   font-family: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto",
-    "Helvetica Neue", "Arial", "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-    "Noto Color Emoji";
+    "Helvetica Neue", "Arial", "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   letter-spacing: 0.1px;
   -webkit-font-smoothing: antialiased;
 }
@@ -28,13 +27,13 @@ p {
   margin-bottom: 1.5rem;
 }
 
-.btn {
+/* .btn {
   @apply bg-blue-500 shadow-md text-base text-white font-bold px-3 py-2 hover:bg-blue-400 rounded-md mx-2 mb-2;
-}
+} */
 
-.footer-link {
+/* .footer-link {
   @apply text-gray-100 hover:text-gray-300 rounded hover:bg-gray-400 hover:bg-opacity-20 hover:underline font-normal px-3 py-2 mx-2 mb-2;
-}
+} */
 
 .link {
   @apply underline text-blue-500 hover:text-blue-600;
@@ -85,3 +84,95 @@ p {
   visibility: visible;
   opacity: 1;
 }
+
+/* // 按鈕基本樣式 */
+.btn {
+  @apply border font-bold rounded-md px-4 py-2 m-2 transition duration-500 select-none focus:ring-1 focus:ring-gray-100;
+}
+
+/* // 按鈕種類 */
+.btn-primary {
+  @apply bg-blue-500 hover:bg-blue-700 text-white;
+}
+.btn-secondary {
+  @apply hover:bg-gray-700 text-gray-700 border-gray-300 border;
+}
+
+/* // 按鈕尺寸 */
+.btn-xs {
+  @apply text-xs;
+}
+.btn-xl {
+  @apply text-xl;
+}
+
+.btn-outlined {
+  @apply leading-relaxed font-medium flex items-center cursor-pointer border focus:ring-0 rounded-md mx-2 mb-2 px-4 py-2;
+}
+
+.btn-outlined-gray {
+  @apply leading-relaxed font-medium flex items-center cursor-pointer border rounded-md mx-2 mb-2 border-gray-400 text-gray-600 hover:bg-gray-600 hover:bg-opacity-20 hover:border-gray-600 px-4 py-2;
+}
+
+.btn-outlined-yellow {
+  @apply leading-relaxed font-medium flex items-center cursor-pointer border rounded-md mx-2 mb-2 border-yellow-400 text-yellow-600 hover:bg-yellow-600 hover:bg-opacity-20 hover:border-yellow-600 px-4 py-2;
+}
+
+.btn-outlined-orange {
+  @apply leading-relaxed font-medium flex items-center cursor-pointer border rounded-md mx-2 mb-2 border-orange-400 text-orange-600 hover:bg-orange-600 hover:bg-opacity-20 hover:border-orange-600 px-4 py-2;
+}
+
+.btn-outlined-red {
+  @apply leading-relaxed font-medium flex items-center cursor-pointer border rounded-md mx-2 mb-2 border-red-400 text-red-600 hover:bg-red-600 hover:bg-opacity-20 hover:border-red-600 px-4 py-2;
+}
+
+.btn-outlined-green {
+  @apply leading-relaxed font-medium flex items-center cursor-pointer border rounded-md mx-2 mb-2 border-green-400 text-green-600 hover:bg-green-600 hover:bg-opacity-20 hover:border-green-600 px-4 py-2;
+}
+
+.btn-outlined-teal {
+  @apply leading-relaxed font-medium flex items-center cursor-pointer border rounded-md mx-2 mb-2 border-teal-400 text-teal-600 hover:bg-teal-600 hover:bg-opacity-20 hover:border-teal-600 px-4 py-2;
+}
+
+.btn-outlined-blue {
+  @apply leading-relaxed font-medium flex items-center cursor-pointer border rounded-md mx-2 mb-2 border-blue-400 text-blue-600 hover:bg-blue-600 hover:bg-opacity-20 hover:border-blue-600 px-4 py-2;
+}
+
+.btn-outlined-indigo {
+  @apply leading-relaxed font-medium flex items-center cursor-pointer border rounded-md mx-2 mb-2 border-indigo-400 text-indigo-600 hover:bg-indigo-600 hover:bg-opacity-20 hover:border-indigo-600 px-4 py-2;
+}
+
+.btn-outlined-purple {
+  @apply leading-relaxed font-medium flex items-center cursor-pointer border rounded-md mx-2 mb-2 border-purple-400 text-purple-600 hover:bg-purple-600 hover:bg-opacity-20 hover:border-purple-600 px-4 py-2;
+}
+
+.btn-outlined-pink {
+  @apply leading-relaxed font-medium flex items-center cursor-pointer border rounded-md mx-2 mb-2 border-pink-400 text-pink-600 hover:bg-pink-600 hover:bg-opacity-20 hover:border-pink-600 px-4 py-2;
+}
+
+.btn-group {
+  @apply inline-flex border border-gray-300 border-opacity-20 rounded divide-x-2 divide-gray-300 divide-opacity-20;
+}
+
+.btn-filter {
+  @apply text-sm px-3 py-2 font-bold text-gray-300 hover:text-gray-400 focus:outline-none focus:ring-0 mx-0;
+}
+
+.btn-filter-active {
+  @apply text-sm px-3 py-2 font-bold text-yellow-300 hover:text-yellow-400 focus:outline-none focus:ring-0 mx-0;
+}
+
+input[type=text]:focus-within ~ label,
+input[type=text]:not(:placeholder-shown) ~ label {
+  @apply transform scale-75 -translate-y-6;
+}
+
+input[type=text]:focus-within ~ label {
+  @apply text-blue-500;
+}
+
+.outline input[type=text]:focus-within ~ label,
+.outline input[type=text]:not(:placeholder-shown) ~ label {
+  @apply transform scale-75 -translate-y-4 z-0 ml-3 px-1 py-0;
+}
+
