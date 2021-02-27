@@ -6,6 +6,7 @@ import Login from "../app/login"
 import Main from "../app/main"
 import Profile from "../app/profile"
 import Layout from "../components/Layout"
+// import AuthProvider from "../providers/AuthProvider"
 
 const App = () => {
   return (

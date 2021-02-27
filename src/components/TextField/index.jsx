@@ -1,23 +1,47 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const TextField = ({ props, id, label, name, type, placeholder }) => {
-  // const initialState = ''
-  // const [values, setValue] = useState(initialState)
+export const TextField = props => {
+  const { name, id, type, placeholder, label } = props
   return (
-    <div className="md-input-main">
-      <div className="md-textfield">
+    <>
+      <div className="outline-textfield">
         <input
-          id={id}
           name={name}
-          type={type}
           placeholder={placeholder}
+          id={id}
+          type={type}
           {...props}
         />
         <label htmlFor={id}>{label}</label>
-        <div className="md-textfield-underline" />
       </div>
-    </div>
+    </>
   )
+}
+
+TextField.defaultProps = {
+  type: `text`,
+  placeholder: ``,
+}
+
+TextField.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  type: PropTypes.oneOf([
+    'text',
+    'password',
+    'number',
+    'tel',
+    'email',
+    'date',
+    'time',
+    'datetime-local',
+    'month',
+    'week',
+    'url',
+  ]),
+  placeholder: PropTypes.string,
+  label: PropTypes.string.isRequired,
 }
 
 export default TextField

@@ -1,57 +1,59 @@
-.md-input-main {
-  @apply font-sans text-lg max-w-full;
-  /* width: 50%;
-	  font-size: 1.25rem;
-  	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
+.outline-textfield {
+  @apply relative my-4 border-2 border-gray-400 rounded-md focus-within:border-blue-500;
 }
-.md-textfield {
-  @apply relative;
-  /* position: relative; */
+
+.outline-textfield input {
+  @apply block p-2 w-full text-lg appearance-none focus:outline-none bg-transparent;
 }
-.md-textfield > input[type=text] {
-  @apply w-full bg-transparent outline-none;
-  /* width: 100%;
-	outline: none; */
-	height: 50px;
+
+.outline-textfield input::placeholder {
+  @apply text-gray-400;
 }
-.md-textfield > label {
-  @apply absolute pointer-events-none block;
-  /* display: block;
-  position: absolute;
-  pointer-events: none; */
-	transform-origin: top left;
-	transform: translate(0, -40px) scale(1);
-	transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+
+.outline-textfield label {
+  @apply absolute top-0 text-lg p-4 -z-1 focus-within:bg-gray-700 duration-300 origin-0;
 }
-.md-label-focus {
-  @apply text-blue-500;
-  /* color: #3182ce; */
-  transform: translate(0, -65px) scale(0.75);
-  transform-origin: top left;
+
+.outline-textfield input:focus,
+.outline-textfield input:not(:placeholder-shown) {
+  @apply border-blue-500 outline-none shadow-sm;
 }
-.md-textfield-underline {
-  @apply border-b border-gray-500;
-  /* border-bottom: 1px solid #718096; */
+
+.outline-textfield input:focus-within ~ label {
+  @apply text-blue-500 bg-gray-700;
 }
-.md-textfield-underline:after {
-  @apply absolute left-0 right-0 pointer-events-none bg-transparent border-b-2 border-blue-500;
-  /* position: absolute;
-  left: 0;
-  right: 0;
-  pointer-events: none; */
-	bottom: -0.05rem;
-	content: "";
-	transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
-	transform: scaleX(0);
-	/* border-bottom: 2px solid #805ad5; */
+
+.outline-textfield input:focus-within ~ label,
+.outline-textfield input:not(:placeholder-shown) ~ label {
+  @apply text-blue-500 bg-gray-700 transform scale-75 -translate-y-4 z-0 ml-3 px-1 py-0;
 }
-.md-textfield > input[type=text]:focus ~ .md-textfield-underline:after {
-  transform: scaleX(1);
+
+.floating-input {
+  @apply my-4 relative rounded-md border-2 border-gray-400 border-opacity-70 focus-within:border-blue-500;
 }
-.md-textfield > input[type=text]:focus + label,
-.md-textfield > input[type=text]:not(:placeholder-shown) + label {
-  @apply md-label-focus;
-  /* color: #3182ce;
-	transform-origin: top left;
-  transform: translate(0, -65px) scale(0.75); */
+
+.floating-input > input {
+  @apply block w-full p-4 appearance-none placeholder-gray-400 focus:outline-none bg-transparent;
+}
+
+.floating-input > label {
+  @apply absolute top-0 left-0 p-4 -z-1 h-full text-lg focus:text-blue-500 focus:bg-gray-700 pointer-events-none transform origin-top-left transition-all duration-300 ease-in-out;
+}
+
+.floating-input > input::placeholder {
+  @apply text-gray-400;
+}
+
+/* .floating-input > input:focus,
+.floating-input > input:not(:placeholder-shown) {
+  @apply pt-8;
+} */
+
+.floating-input > input:focus-within ~ label,
+.floating-input > input:not(:placeholder-shown) ~ label {
+  @apply transform scale-75 -translate-y-4 z-0 ml-3 px-1 py-0;
+}
+
+.floating-input > input:focus-within ~ label {
+  @apply text-blue-500 bg-gray-700;
 }

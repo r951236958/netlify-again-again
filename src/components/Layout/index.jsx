@@ -1,12 +1,12 @@
-import Container from "@material-ui/core/Container"
-import { ThemeProvider } from "@material-ui/core/styles"
-import { graphql, useStaticQuery } from "gatsby"
-import Prism from "prismjs"
-import React, { useEffect } from "react"
-import theme from "../../theme"
-import Footer2 from "../Footer"
-import TopBar from "../TopBar"
-import Title from "../Title"
+import Container from '@material-ui/core/Container'
+import { ThemeProvider } from '@material-ui/core/styles'
+import { graphql, useStaticQuery } from 'gatsby'
+import Prism from 'prismjs'
+import React, { useEffect } from 'react'
+import theme from '../../theme'
+import Footer2 from '../Footer'
+import TopBar from '../TopBar'
+import Title from '../Title'
 
 const Layout = ({ children, siteTitle }) => {
   const data = useStaticQuery(graphql`
@@ -38,10 +38,8 @@ const Layout = ({ children, siteTitle }) => {
           <div className="max-w-5xl mt-0 mb-auto mx-auto pt-0 pb-5 px-4">
             <main>
               <div className="min-h-screen py-2 px-4 sm:px-6 lg:px-8">
-                <Container>
-                  <Title>{siteTitle}</Title>
-                  {children}
-                </Container>
+                <Title>{siteTitle}</Title>
+                <Container>{children}</Container>
               </div>
             </main>
             <Footer2 />

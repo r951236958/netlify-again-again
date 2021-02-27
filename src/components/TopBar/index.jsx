@@ -1,34 +1,38 @@
-import { Transition } from "@headlessui/react"
-import { navigate } from "gatsby"
-import { Link } from "gatsby-theme-material-ui"
-import PropTypes from "prop-types"
-import React, { useState, useEffect } from "react"
-import {
-  useIdentityContext,
-  IdentityModal,
-} from "react-netlify-identity-widget"
-
+import { Transition } from '@headlessui/react'
+import { navigate } from 'gatsby'
+import { Link } from 'gatsby-theme-material-ui'
+import PropTypes from 'prop-types'
+import React, { useState, useEffect } from 'react'
+// import { useIdentityContext, IdentityModal, } from "react-netlify-identity-widget"
+import { getUser, isLoggedIn, logout } from '../../utils/auth'
+import firebase from 'gatsby-plugin-firebase'
+import UserLogin from '../UserLogin'
 export default function TopBar({ menuLinks }) {
   const [isOpen, setIsOpen] = useState(false)
-  const [dialog, setDialog] = useState(false)
-  const { user, isLoggedIn, logoutUser } = useIdentityContext()
+  // const [dialog, setDialog] = useState(false)
+  // const { user, isLoggedIn, logoutUser } = useIdentityContext()
   const [menuOpen, setMenuOpen] = useState(false)
+  const user = getUser()
 
   useEffect(() => {
     setMenuOpen(false)
   }, [])
 
+  function handleMobileMenuOpen() {
+    setMenuOpen(!menuOpen)
+  }
+
   return (
     <div className="bg-blueGray-900">
-      <nav className="bg-darkBlue-900">
+      <nav className="relative z-50 bg-darkBlue-900">
         <div className="max-w-7xl mx-auto px-2 md:px-6 lg:px-8">
           <div className="relative flex items-center justify-between h-16">
             <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
               {/* Mobile menu button*/}
               <button
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700 hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 aria-expanded="false"
-                onClick={() => setMenuOpen(!menuOpen)}
+                onClick={handleMobileMenuOpen}
               >
                 <span className="sr-only">Open main menu</span>
                 {/* Icon when menu is closed. */}
@@ -40,7 +44,7 @@ export default function TopBar({ menuLinks }) {
                 <svg
                   width="27"
                   height="27"
-                  className={(!menuOpen ? "block" : "hidden") + " h-6 w-6"}
+                  className={(!menuOpen ? 'block' : 'hidden') + ' h-6 w-6'}
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -62,7 +66,9 @@ export default function TopBar({ menuLinks }) {
                 <svg
                   width="27"
                   height="27"
-                  className={(menuOpen ? "block" : "hidden") + " h-6 w-6"}
+                  className={
+                    (menuOpen ? 'block md:hidden' : 'hidden') + ' h-6 w-6'
+                  }
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -80,7 +86,7 @@ export default function TopBar({ menuLinks }) {
             </div>
             <div className="flex-1 flex items-center justify-center md:items-stretch md:justify-start">
               <div className="flex flex-shrink-0 items-center">
-                <Link to="/">
+                <Link to="/" color="inherit">
                   <svg
                     width="36"
                     height="36"
@@ -125,6 +131,7 @@ export default function TopBar({ menuLinks }) {
                     <Link
                       key={link.name}
                       activeClassName="active"
+                      color="inherit"
                       className="text-gray-300 hover:bg-blueGray-500 hover:bg-opacity-40 hover:text-white active:bg-gray-600 px-3 py-2 rounded-md text-sm font-medium hover:no-underline"
                       to={link.link}
                     >
@@ -135,7 +142,7 @@ export default function TopBar({ menuLinks }) {
               </div>
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
-              {isLoggedIn && (
+              {isLoggedIn() && (
                 <div className="mx-3 relative">
                   {/* Profile dropdown */}
                   <button
@@ -182,7 +189,19 @@ export default function TopBar({ menuLinks }) {
                       aria-orientation="vertical"
                       aria-labelledby="user-menu"
                     >
+                      {menuLinks.map((link, i) => (
+                        <Link
+                          color="inherit"
+                          key={i}
+                          activeClassName="active"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          to={link.link}
+                        >
+                          {link.name}
+                        </Link>
+                      ))}
                       <Link
+                        color="inherit"
                         to="/"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
@@ -190,13 +209,15 @@ export default function TopBar({ menuLinks }) {
                         Home
                       </Link>
                       <Link
+                        color="inherit"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         to="/app/"
                       >
                         App
                       </Link>
-                      {isLoggedIn && (
+                      {isLoggedIn() && (
                         <Link
+                          color="inherit"
                           to="/app/profile/"
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                           role="menuitem"
@@ -204,25 +225,26 @@ export default function TopBar({ menuLinks }) {
                           Profile
                         </Link>
                       )}
-                      <a
-                        href="#logout"
+                      <button
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
                         onClick={async event => {
                           event.preventDefault()
-                          await logoutUser()
-                          navigate(`/app/login`)
+                          await logout(firebase).then(() =>
+                            navigate(`/app/login`)
+                          )
                         }}
                       >
                         Sign out
-                      </a>
+                      </button>
                     </div>
                   </Transition>
                 </div>
               )}
-
+              <UserLogin />
+              {/*
               <button
-                onClick={() => setDialog(true)}
+                // onClick={() => setDialog(true)}
                 className="flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 id="user-menu"
                 aria-haspopup="true"
@@ -240,6 +262,7 @@ export default function TopBar({ menuLinks }) {
                   <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z" />
                 </svg>
               </button>
+              */}
             </div>
           </div>
         </div>
@@ -248,40 +271,29 @@ export default function TopBar({ menuLinks }) {
         Mobile menu, toggle classes based on menu state.
     
         Menu open: "block", Menu closed: "hidden"
-      */}
-        <div className={menuOpen ? "block" : "hidden"}>
+        */}
+        <div
+          className={
+            (menuOpen ? 'absolute block md:hidden ' : 'hidden ') +
+            'w-full bg-darkBlue-900'
+          }
+        >
           <div className="px-2 pt-2 pb-3 space-y-1">
             {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-            <Link
-              to="/"
-              className="bg-darkBlue-900 text-gray-300 hover:no-underline hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Home
-            </Link>
-
-            <Link
-              className="bg-darkBlue-900 text-gray-300 hover:no-underline hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-              to="/app/"
-            >
-              App
-            </Link>
-
-            <Link
-              to="/page-2/"
-              className="bg-darkBlue-900 text-gray-300 hover:no-underline hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Page2
-            </Link>
-
-            <Link
-              to="/buttons/"
-              className="bg-darkBlue-900 text-gray-300 hover:no-underline hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Buttons
-            </Link>
+            {menuLinks.map((link, i) => (
+              <Link
+                color="inherit"
+                key={i}
+                activeClassName="active"
+                className="bg-darkBlue-900 text-gray-300 hover:no-underline hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                to={link.link}
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
 
-          {isLoggedIn && (
+          {isLoggedIn() && (
             <div className="pt-4 pb-3 border-t border-gray-700">
               <div className="flex items-center px-5">
                 <div className="flex-shrink-0">
@@ -298,7 +310,7 @@ export default function TopBar({ menuLinks }) {
                 </div>
                 <div className="ml-3">
                   <div className="text-base font-medium leading-none text-white">
-                    {user.user_metadata && user.user_metadata.full_name}
+                    {user.displayName}
                   </div>
                   <div className="text-sm font-medium leading-none text-gray-400">
                     {user.email}
@@ -309,8 +321,7 @@ export default function TopBar({ menuLinks }) {
                   className="ml-auto bg-gray-800 flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                   onClick={async event => {
                     event.preventDefault()
-                    await logoutUser()
-                    navigate(`/app/login`)
+                    await logout(firebase).then(() => navigate(`/app/login`))
                   }}
                 >
                   <svg
@@ -328,6 +339,7 @@ export default function TopBar({ menuLinks }) {
               </div>
               <div className="mt-3 px-2 space-y-1">
                 <Link
+                  color="inherit"
                   to="/app/"
                   className="block px-3 py-2 rounded-md text-base hover:no-underline font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                 >
@@ -335,33 +347,34 @@ export default function TopBar({ menuLinks }) {
                 </Link>
 
                 <Link
+                  color="inherit"
                   to="/app/profile/"
                   className="block px-3 py-2 rounded-md text-base hover:no-underline font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                 >
                   Profile
                 </Link>
 
-                <a
-                  href="#logout"
+                <button
                   className="block px-3 py-2 rounded-md text-base hover:no-underline font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                   onClick={async event => {
                     event.preventDefault()
-                    await logoutUser()
-                    navigate(`/app/login`)
+                    await logout(firebase).then(() => navigate(`/app/login`))
                   }}
                 >
                   Sign out
-                </a>
+                </button>
               </div>
             </div>
           )}
         </div>
+        {/*
         <IdentityModal
           showDialog={dialog}
           onCloseDialog={() => setDialog(false)}
           onLogin={user => navigate("/app/profile")}
           onSignup={user => navigate("/app/profile")}
-        />
+        /> 
+        */}
       </nav>
     </div>
   )

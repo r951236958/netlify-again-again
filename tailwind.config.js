@@ -13,6 +13,12 @@ module.exports = {
       inset: {
         '-0.05': '-0.05rem',
       },
+      transformOrigin: {
+        '0': '0%',
+      },
+      zIndex: {
+        '-1': '-1',
+      },
     },
     screens: {
       sm: '640px',
@@ -141,8 +147,8 @@ module.exports = {
     },
     borderWidth: {
       DEFAULT: '1px',
-      1: '1px',
       0: '0px',
+      1: '1px',
       2: '2px',
       4: '4px',
       8: '8px',
@@ -697,6 +703,15 @@ module.exports = {
   variants: {
     extend: {
       inset: ['hover', 'focus'],
+      borderColor: [
+        'dark',
+        'group-hover',
+        'focus-within',
+        'hover',
+        'focus',
+        'active',
+      ],
+      scale: ['focus-within'],
     },
     accessibility: ['responsive', 'focus-within', 'focus'],
     alignContent: ['responsive'],
@@ -728,15 +743,7 @@ module.exports = {
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
     borderCollapse: ['responsive'],
-    borderColor: [
-      'responsive',
-      'dark',
-      'group-hover',
-      'focus-within',
-      'hover',
-      'focus',
-      'active',
-    ],
+    borderColor: ['responsive'],
     borderOpacity: [
       'responsive',
       'group-hover',
@@ -814,11 +821,11 @@ module.exports = {
     pointerEvents: ['responsive'],
     position: ['responsive'],
     resize: ['responsive'],
-    ringColor: ['responsive', 'dark', 'focus-within', 'focus'],
-    ringOffsetColor: ['responsive', 'dark', 'focus-within', 'focus'],
-    ringOffsetWidth: ['responsive', 'focus-within', 'focus'],
-    ringOpacity: ['responsive', 'focus-within', 'focus'],
-    ringWidth: ['responsive', 'focus-within', 'focus'],
+    // ringColor: ['responsive', 'dark', 'focus-within', 'focus'],
+    // ringOffsetColor: ['responsive', 'dark', 'focus-within', 'focus'],
+    // ringOffsetWidth: ['responsive', 'focus-within', 'focus'],
+    // ringOpacity: ['responsive', 'focus-within', 'focus'],
+    // ringWidth: ['responsive', 'focus-within', 'focus'],
     rotate: ['responsive', 'hover', 'focus'],
     scale: ['responsive', 'hover', 'focus'],
     skew: ['responsive', 'hover', 'focus'],
@@ -868,5 +875,8 @@ module.exports = {
     wordBreak: ['responsive'],
     zIndex: ['responsive', 'focus-within', 'focus'],
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
+  corePlugins: {
+    ringWidth: false,
+  },
 }

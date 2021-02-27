@@ -71,3 +71,9 @@ yarn-error.log
 .netlify
 
 .cache
+
+.github/
+
+serviceAccountKey.*
+
+.vscode/

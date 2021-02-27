@@ -1,6 +1,10 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 // TODO: dear user, please change this to your own instance
-const netlifyInstance = "https://gatsby-netlify.mechnick.com/"
-if (netlifyInstance === "https://gatsby-netlify.mechnick.com/") {
+const netlifyInstance = 'https://gatsby-netlify.mechnick.com/'
+if (netlifyInstance === 'https://gatsby-netlify.mechnick.com/') {
   console.warn(`
 
 **************************
@@ -19,45 +23,44 @@ More docs: https://www.netlify.com/docs/identity/
 
 module.exports = {
   siteMetadata: {
-    title: "React App with Google Spreadsheet",
+    title: 'React App with Google Spreadsheet',
     description: `This is a fork of https://github.com/gatsbyjs/gatsby-starter-default which shows how to use Netlify Identity and Netlify Functions (via Netlify Dev) with Gatsby. Start here for your next JAMstack hackathon or use this as a reference implementation.`,
     author: `Nick Lin`,
     menuLinks: [
       {
-        name: "Home",
-        link: "/",
+        name: 'Home',
+        link: '/',
       },
       {
-        name: "About",
-        link: "/about/",
+        name: 'About',
+        link: '/about/',
       },
       {
-        name: "App",
-        link: "/app/",
+        name: 'App',
+        link: '/app/',
       },
       {
-        name: "Page2",
-        link: "/page-2/",
+        name: 'Page2',
+        link: '/page-2/',
       },
       {
-        name: "Example",
-        link: "/example/",
+        name: 'Example',
+        link: '/example/',
       },
       {
-        name: "Links",
-        link: "/links/",
+        name: 'Links',
+        link: '/links/',
       },
       {
-        name: "Form",
-        link: "/form/",
+        name: 'Form',
+        link: '/form/',
       },
       {
-        name: "Test",
-        link: "/test/",
+        name: 'Test',
+        link: '/test/',
       },
     ],
   },
-
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
@@ -96,7 +99,7 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     {
-      resolve: "gatsby-plugin-sass",
+      resolve: 'gatsby-plugin-sass',
       options: {
         // useResolveUrlLoader: true,
         sassOptions: {
@@ -117,6 +120,26 @@ module.exports = {
             ],
           },
         },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-firebase',
+      options: {
+        credentials: {
+          apiKey: process.env.GATSBY_FIREBASE_API_KEY,
+          authDomain: process.env.GATSBY_FIREBASE_AUTH_DOMAIN,
+          databaseURL: process.env.GATSBY_FIREBASE_DATABASE_URL,
+          projectId: process.env.GATSBY_FIREBASE_PROJECT_ID,
+          storageBucket: process.env.GATSBY_FIREBASE_STORAGE_BUCKET,
+          messagingSenderId: process.env.GATSBY_FIREBASE_MESSAGING_SENDER_ID,
+          appId: process.env.GATSBY_FIREBASE_APP_ID,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: false, // For example
       },
     },
   ],

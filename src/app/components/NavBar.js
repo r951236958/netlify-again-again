@@ -1,10 +1,12 @@
-import { Link, navigate } from "gatsby"
-import React from "react"
-import { useIdentityContext } from "react-netlify-identity-widget"
-import Status from "../../components/Status"
+import { Link, navigate } from 'gatsby'
+import React from 'react'
+// import { useIdentityContext } from "react-netlify-identity-widget"
+import Status from '../../components/Status'
+import { logout, isLoggedIn } from '../../utils/auth'
+import firebase from 'gatsby-plugin-firebase'
 
-export default () => {
-  const { isLoggedIn, logoutUser } = useIdentityContext()
+const NavBar = () => {
+  // const { isLoggedIn, logoutUser } = useIdentityContext()
   // let message = isLoggedIn
   // ? `Hello, ${user.user_metadata && user.user_metadata.full_name}`
   // : "You are not logged in"
@@ -19,26 +21,24 @@ export default () => {
           >
             Main
           </Link>
-          {` `}
+
           <Link
             className="text-gray-300 hover:bg-gray-700 hover:text-white active:bg-gray-900 px-3 py-2 rounded-md text-sm font-medium"
             to="/app/profile"
           >
             Profile
           </Link>
-          {` `}
-          {isLoggedIn ? (
-            <a
+
+          {isLoggedIn() ? (
+            <button
               className="text-gray-300 hover:bg-gray-700 hover:text-white active:bg-gray-900 px-3 py-2 rounded-md text-sm font-medium"
-              href="/"
               onClick={async event => {
                 event.preventDefault()
-                await logoutUser()
-                navigate(`/app/login`)
+                await logout(firebase).then(() => navigate(`/app/login`))
               }}
             >
               Logout
-            </a>
+            </button>
           ) : (
             <Link
               className="text-gray-300 hover:bg-gray-700 hover:text-white active:bg-gray-900 px-3 py-2 rounded-md text-sm font-medium"
@@ -53,3 +53,5 @@ export default () => {
     </>
   )
 }
+
+export default NavBar
